@@ -1,0 +1,575 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #222831;
+}
+
+.app-bar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #153448;
+  color: white;
+  position: relative;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.search-bar {
+  margin: 0 auto; 
+  order: 2; 
+}
+
+.search-bar input[type="text"] {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 5px;
+  background-color: transparent;
+  border-bottom: 1px solid white;
+  color: white;
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+  box-sizing: border-box; /* Ensure padding is included in size */
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  min-width: 44px; /* Minimum width */
+  min-height: 44px; /* Minimum height */
+  box-sizing: border-box; /* Ensure padding is included in size */
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 0.5rem;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center; /* Center the bars */
+  align-items: center; /* Center the bars */
+  width: 44px;
+  height: 44px; /* Touch target size */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger__bar {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+  margin: 3px 0; /* Space between bars */
+}
+
+
+.nav {
+  display: flex;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item {
+  margin-left: 1rem;
+  padding: 10px;
+  text-align: center;
+}
+
+.nav__link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: 0.3s;
+  text-align: center;
+  display: inline-block;
+  min-width: 44px; /* Minimum width */
+  min-height: 44px; /* Minimum height */
+  box-sizing: border-box; /* Ensure padding is included in size */
+}
+
+.nav__link:hover,
+.nav__link:focus {
+  background-color: #153448;
+}
+
+@media (max-width: 768px) {
+  .search-bar {
+    order: 1; /* Change order to 1 to keep it above when the hamburger is active */
+  }  
+
+  .hamburger {
+    display: flex;
+    height: 44px; /* Touch target size */
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #153448;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10; /* Ensure nav is above other content */
+  }
+
+  .nav__list {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav__item {
+    margin: 0;
+    width: 100%;
+  }
+
+  .nav__link {
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    min-width: 44px; /* Minimum width */
+    min-height: 44px; /* Minimum height */
+    display: inline-block; /* Ensure inline elements have dimensions */
+    box-sizing: border-box; /* Ensure padding is included in size */
+  }
+
+  .nav--open {
+    display: flex;
+  }
+
+  body.nav-open {
+    overflow: hidden; /* Prevent scrolling when nav is open */
+  }
+
+  body.nav-open .hero {
+    margin-top: 200px; /* Adjust based on your nav height */
+  }
+}
+
+:focus {
+  outline: 2px solid #ff9800;
+  outline-offset: 4px;
+}
+
+/* Skip to Content */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 1000;
+  transition: top 0.3s;
+  min-width: 44px; /* Width minimum */
+  min-height: 44px; /* Height minimum */
+  box-sizing: border-box; /* Ensure padding is included in size */
+  display: inline-block;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: margin-top 0.3s; /* Transisi halus ketika nav terbuka */
+}
+
+.hero__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background-image: url(/src/public/images/heros/hero-image_2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero__text {
+  position: absolute;
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.restaurants {
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.restaurant-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 2rem;
+  justify-content: center; 
+}
+
+.restaurant-item {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.restaurant-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.restaurant-info {
+  text-align: left;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr)); /* Menampilkan 3 kartu per baris */
+  gap: 24px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* Pusatkan daftar restoran di tengah */
+}
+
+.card {
+  background: #000;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  margin: 0 auto; /* Pusatkan kartu di tengah */
+}
+
+@media (max-width: 1200px) {
+  .wrapper {
+    grid-template-columns: repeat(2, minmax(200px, 1fr)); /* Ketika layar lebih kecil, tampilkan 2 kartu per baris */
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: repeat(1, minmax(200px, 1fr)); /* Ketika layar sangat kecil, tampilkan 1 kartu per baris */
+  }
+}
+
+.poster {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .3s;
+}
+
+.card:hover .poster img {
+  transform: scale(1.1);
+}
+
+.details {
+  padding: 1.5em;
+}
+
+.details h1,
+.details h2 {
+  font-weight: 700;
+}
+
+.details h1 {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.details h2 {
+  font-weight: 400;
+  font-size: 1em;
+  margin-bottom: 10px;
+  opacity: .6;
+}
+
+.details .rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.details .rating i {
+  color: #e3c414;
+  margin-right: 5px;
+}
+
+.details .desc {
+  color: #fff;
+  opacity: .8;
+  line-height: 1.5;
+  margin-bottom: 1em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 600px) {
+  .details h1 {
+    font-size: 1.2em;
+  }
+
+  .details h2 {
+    font-size: 0.9em;
+  }
+
+  .details .rating {
+    font-size: 0.9em;
+  }
+}
+
+/* CSS for favorite icon */
+.favorite-icon-container {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.favorite-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: transparent;
+  position: relative;
+}
+
+.favorite-icon::before {
+  content: "\2764"; /* Love symbol */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2); /* Adjust transparency */
+  text-align: center;
+  transform: translate(-50%, -50%);
+  color: #888; /* Adjust border color */
+}
+
+/* CSS for restaurant list */
+.card {
+  position: relative;
+  background-color: #333; /* Adjust card background color */
+  color: white;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.details {
+  padding: 20px;
+}
+
+.details h1 {
+  margin-top: 0;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* CSS for favorite icon */
+.favorite-icon-container {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.favorite-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: #ccc;
+  position: relative;
+}
+
+.favorite-icon.favorited {
+  color: red;
+}
+
+.favorite-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+}
+
+/* CSS for review form */
+.review-form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.list {
+  color: #ccc;
+}
+
+#review-form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 600px;
+  border: none;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#review-form input,
+#review-form textarea {
+  border: none;
+  border-bottom: 2px solid white;
+  background: transparent;
+  color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+#review-form input::placeholder,
+#review-form textarea::placeholder {
+  color: white;
+}
+
+#review-form button {
+  background-color: #444;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+
+}
+
+#review-form button:hover {
+  background-color: #555;
+}
+
+/* CSS for review items */
+.review-item {
+  color: white;
+  margin: 5px 0;
+  text-align: justify;
+}
+
+/* CSS for loading indicator */
+.loading-indicator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 18px;
+  z-index: 1000;
+}
+
+/* CSS for centering details */
+.restaurant-detail {
+  text-align: center;
+  color: white;
+}
+
+.restaurant-detail img {
+  display: block;
+  margin: 0 auto;
+}
+
+.restaurant-detail .detail-item {
+  margin: 10px 0;
+}
+
+.restaurant-detail ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  display: inline-block;
+}
+
+.restaurant-detail ul li {
+  margin-left: 0;
+}
+
+.restaurant-detail .favorite-container {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+footer {
+  background-color: #3C5B6F;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+@media (min-width: 1200px) {
+  .hero__image {
+    width: 1000px;
+  }
+}

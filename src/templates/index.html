@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#DB0000"/>
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    <link rel="manifest" href="./app.webmanifest.json">
+    <link rel="icon" href="./favicon.png">
+    <title>Restaurant Catalog</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css'>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to Content</a>
+    <header class="app-bar">
+        <div class="app-bar__brand">
+            <h1 class="brand-name">Restaurant Catalog</h1>
+        </div>
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="hamburger__bar"></span>
+            <span class="hamburger__bar"></span>
+            <span class="hamburger__bar"></span>
+        </button>
+        <nav class="nav" aria-label="Primary Navigation">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href=""  id="favorite-button" data-id="restaurantId" class="nav__link">Favorite</a></li>
+                <li class="nav__item"><a href="https://www.linkedin.com/in/muhammad-rifky-dwiputra-22a0b627a/" class="nav__link">About Us</a></li>
+            </ul>
+            <div class="search-bar nav__item">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button id="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </header>
+    <main id="main-content" tabindex="0">
+        <section class="hero">
+            <img src="./images/heros/hero-image_2.jpg" class="hero-image" alt="Restaurant Catalog">
+            <div class="hero__text">
+                <h2>Welcome to Restaurant Catalog</h2>
+                <p>Your Journey to Wellness Starts Here</p>
+            </div>
+        </section>
+        <section class="restaurants">
+            <h2>Explore Restaurant</h2>
+            <div class="wrapper">
+                <div class="card"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright © 2024 Restaurant Catalog - By Muhammad Rifky Dwiputra</p>
+    </footer>
+    <script src="/src/scripts/index.js"></script>
+</body>
+</html>
